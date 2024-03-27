@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "ucie_analysis"
+version = "0.1.0"
+description = "For Analyzing UCIe material"
+authors = ["Nick Amatruda <namatrud@amd.com>"]
+readme = "README.md"
+
+# For a local package?
+# packages = [
+#     { include = "ucie_map_queries", from = "map/queries" },
+# ]
+
+[tool.poetry.dependencies] # Required dependencies "poetry install"
+python = ">=3.9, <3.11"
+amdmap = "^1.90.0"
+ipykernel = "^6.29.3"
+matplotlib = "^3.8.3"
+
+[[tool.poetry.source]] # Add source for amdmap, PyPI is implicit as a source: https://python-poetry.org/docs/repositories/
+name = "amd"
+url = "http://ausvartfapp01.amd.com:8081/artifactory/api/pypi/pypi-local/simple"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
